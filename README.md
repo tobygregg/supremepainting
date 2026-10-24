@@ -30,6 +30,7 @@ tailwind.config.js      ← brand colours + fonts
 
 - [ ] Replace `https://www.example.gg` with the real domain (canonical, `og:url`, `og:image`, JSON-LD in `<head>`).
 - [ ] Paste Supreme's real Facebook page URL into the Facebook link in the `CONTACT` section (currently a Facebook search link).
+- [ ] **Form email is temporarily toby1@greggs.org** (for testing). Before handover, set the form `action` back to `https://formsubmit.co/supremedecorltd@gmail.com`.
 - [ ] **Activate the form:** submit the quote form once on the live site. FormSubmit emails an activation link to supremedecorltd@gmail.com — click it once and every request after that lands in the inbox.
 - [ ] Optional: after activation FormSubmit gives a random alias for the email. Swap it into the form `action` so the address isn't in the page source.
 - [ ] Get the client to sign off the copy (process steps, "what you can expect" points) — nothing in there makes claims about insurance, years trading or numbers of jobs.
