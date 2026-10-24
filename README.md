@@ -32,7 +32,7 @@ tailwind.config.js      ← brand colours + fonts
 - [ ] Paste Supreme's real Facebook page URL into the Facebook link in the `CONTACT` section (currently a Facebook search link).
 - [ ] **Activate the form:** submit the quote form once on the live site. FormSubmit emails an activation link to supremedecorltd@gmail.com — click it once and every request after that lands in the inbox.
 - [ ] Optional: after activation FormSubmit gives a random alias for the email. Swap it into the form `action` so the address isn't in the page source.
-- [ ] Get Paulo to sign off the copy (process steps, "what you can expect" points) — nothing in there makes claims about insurance, years trading or numbers of jobs.
+- [ ] Get the client to sign off the copy (process steps, "what you can expect" points) — nothing in there makes claims about insurance, years trading or numbers of jobs.
 
 ## Images
 
