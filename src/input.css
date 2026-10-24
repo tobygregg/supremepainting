@@ -1,0 +1,188 @@
+/* ============================================================
+   Supreme Painting & Decorating — source styles
+   Edit this file + index.html, then run `npm run build`
+   to regenerate assets/css/styles.css
+   ============================================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Self-hosted fonts (assets/fonts, OFL licensed) ---------- */
+@font-face { font-family: 'Chakra Petch'; font-weight: 500; font-display: swap; src: url('../fonts/chakra-petch-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Chakra Petch'; font-weight: 600; font-display: swap; src: url('../fonts/chakra-petch-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Chakra Petch'; font-weight: 700; font-display: swap; src: url('../fonts/chakra-petch-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Instrument Sans'; font-weight: 400; font-display: swap; src: url('../fonts/instrument-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Instrument Sans'; font-weight: 500; font-display: swap; src: url('../fonts/instrument-sans-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Instrument Sans'; font-weight: 600; font-display: swap; src: url('../fonts/instrument-sans-latin-600-normal.woff2') format('woff2'); }
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-paint font-sans text-ink antialiased; }
+  ::selection { background: #f1cf6b; color: #171512; }
+  /* keyboard focus that's always visible */
+  :focus-visible { outline: 3px solid #f1cf6b; outline-offset: 3px; border-radius: 6px; }
+  section[id] { scroll-margin-top: 72px; }
+  img { -webkit-user-drag: none; }
+}
+
+@layer components {
+  /* ---------- Layout ---------- */
+  .wrap { @apply mx-auto w-full max-w-site px-4 sm:px-6 lg:px-8; }
+
+  /* ---------- Brushed gold (matches the logo finish) ---------- */
+  .gold-fill {
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 1px, transparent 1px 3px),
+      linear-gradient(100deg, #a87a1c 0%, #e6bc48 22%, #f6e7b4 38%, #d4a72c 55%, #a87a1c 78%, #e6bc48 100%);
+  }
+  .gold-text {
+    background: linear-gradient(100deg, #c99a25 0%, #f1cf6b 30%, #fff1c2 45%, #e6bc48 60%, #b8892a 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    @apply relative inline-flex min-h-[48px] items-center justify-center gap-2 overflow-hidden rounded-full px-6 font-display text-[15px] font-semibold tracking-wide transition duration-200;
+  }
+  .btn-gold { @apply btn gold-fill text-ink shadow-gold hover:-translate-y-0.5; }
+  /* sheen sweep on hover */
+  .btn-gold::after {
+    content: ''; position: absolute; inset: -2px; transform: translateX(-120%) skewX(-20deg);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+    transition: transform .6s ease;
+  }
+  .btn-gold:hover::after { transform: translateX(120%) skewX(-20deg); }
+  .btn-ghost { @apply btn border border-white/20 text-white hover:border-gold-200 hover:text-gold-200; }
+  .btn-ghost-dark { @apply btn border border-ink/20 text-ink hover:border-gold-600 hover:text-gold-600; }
+
+  /* ---------- Section headings ---------- */
+  .h-section { @apply font-display text-[2rem] font-bold leading-[1.05] tracking-tight sm:text-[2.6rem] lg:text-[3.2rem]; }
+  .lede { @apply max-w-[60ch] text-[17px] leading-relaxed; }
+
+  /* ---------- Form ---------- */
+  .field { @apply flex flex-col gap-2; }
+  .field label { @apply text-sm font-medium text-white/80; }
+  .input {
+    @apply min-h-[48px] w-full rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-[16px] text-white placeholder-white/30 transition;
+  }
+  .input:focus { @apply border-gold-300 outline-none ring-4 ring-gold/20; }
+  .input:user-invalid { @apply border-red-400; }
+
+  /* ---------- Gallery filter chips ---------- */
+  .chip { @apply min-h-[40px] rounded-full border border-ink/15 px-4 text-sm font-medium text-ink/70 transition hover:border-ink/40 hover:text-ink; }
+  .chip[aria-pressed='true'] { @apply border-ink bg-ink text-gold-200; }
+}
+
+@layer utilities {
+  /* diagonal gold hairlines — lifted from the logo's background */
+  .bg-hairlines {
+    background-image:
+      linear-gradient(135deg, transparent 0 calc(50% - 1px), rgba(212,167,44,.16) 50%, transparent calc(50% + 1px)),
+      linear-gradient(135deg, transparent 0 calc(50% - 1px), rgba(212,167,44,.09) 50%, transparent calc(50% + 1px));
+    background-size: 520px 520px, 260px 260px;
+    background-position: 0 0, 130px 40px;
+  }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}
+
+/* ============================================================
+   Motion
+   ============================================================ */
+
+/* Scroll reveals (added by main.js) */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-in { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: .08s; } .reveal-d2 { transition-delay: .16s; } .reveal-d3 { transition-delay: .24s; }
+
+/* ---------- Hero load sequence ---------- */
+.hero-line { display: block; overflow: hidden; }
+.hero-line > span { display: inline-block; transform: translateY(105%); transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.is-loaded .hero-line > span { transform: none; }
+.is-loaded .hero-line:nth-child(2) > span { transition-delay: .12s; }
+.is-loaded .hero-line:nth-child(3) > span { transition-delay: .24s; }
+
+.hero-fade { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s ease; }
+.is-loaded .hero-fade { opacity: 1; transform: none; }
+.is-loaded .hero-fade.d1 { transition-delay: 1.3s; }
+.is-loaded .hero-fade.d2 { transition-delay: 1.45s; }
+.is-loaded .hero-fade.d3 { transition-delay: 1.6s; }
+
+.hero-photo { opacity: 0; transform: translateY(32px) rotate(var(--r, 0deg)); transition: opacity 1s ease, transform 1.1s cubic-bezier(.2,.8,.2,1); }
+.is-loaded .hero-photo { opacity: 1; transform: rotate(var(--r, 0deg)); }
+.is-loaded .hero-photo.d1 { transition-delay: .35s; }
+.is-loaded .hero-photo.d2 { transition-delay: .6s; }
+
+/* sparkles at the end of the brush stroke */
+.sparkle { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.is-painted .sparkle { animation: twinkle 2.6s ease-in-out infinite; }
+.is-painted .sparkle.s2 { animation-delay: .5s; }
+.is-painted .sparkle.s3 { animation-delay: 1.1s; }
+@keyframes twinkle {
+  0%,100% { opacity: 0; transform: scale(.3) rotate(0deg); }
+  35%,65% { opacity: 1; transform: scale(1) rotate(45deg); }
+}
+
+/* paint drip off the hero photo frame */
+.drip { transform-origin: top; animation: drip 6s cubic-bezier(.5,0,.3,1) 2s infinite; transform: scaleY(.35); }
+@keyframes drip { 0%{transform:scaleY(.35)} 45%,70%{transform:scaleY(1)} 100%{transform:scaleY(.35)} }
+.drip-drop { animation: drop 6s cubic-bezier(.5,0,.6,1) 2s infinite; opacity: 0; }
+@keyframes drop { 0%,42%{opacity:0; transform:translateY(0)} 48%{opacity:1; transform:translateY(0)} 70%{opacity:1; transform:translateY(46px)} 74%,100%{opacity:0; transform:translateY(50px)} }
+
+/* ---------- The van ---------- */
+.van { transform: translateX(110vw); }
+.van.is-driving { animation: van-in 2.2s cubic-bezier(.16,.84,.3,1) forwards; }
+@keyframes van-in {
+  0% { transform: translateX(110vw) rotate(0deg); }
+  78% { transform: translateX(-2%) rotate(-1.2deg); }   /* nose dips as it brakes */
+  90% { transform: translateX(.6%) rotate(.4deg); }
+  100% { transform: translateX(0) rotate(0); }
+}
+.van-body { animation: idle 1.4s ease-in-out 2.4s infinite; }
+@keyframes idle { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-1.5px)} }
+.speedline { opacity: 0; }
+.van.is-driving .speedline { animation: speed 1.8s ease-out forwards; }
+.van.is-driving .speedline:nth-child(2) { animation-delay: .1s; }
+.van.is-driving .speedline:nth-child(3) { animation-delay: .2s; }
+@keyframes speed { 0%{opacity:0; transform:scaleX(.2)} 20%{opacity:.9; transform:scaleX(1)} 100%{opacity:0; transform:scaleX(1.4) translateX(40px)} }
+.dust { opacity: 0; }
+.van.is-driving .dust { animation: dust 1.4s ease-out 1.5s forwards; }
+.van.is-driving .dust:nth-child(2) { animation-delay: 1.6s; }
+@keyframes dust { 0%{opacity:0; transform:scale(.3)} 30%{opacity:.6} 100%{opacity:0; transform:scale(1.6) translate(30px,-10px)} }
+
+/* ---------- Service icons draw-on ---------- */
+.icon-draw path, .icon-draw rect, .icon-draw circle, .icon-draw line, .icon-draw polyline {
+  stroke-dasharray: 120; stroke-dashoffset: 120; transition: stroke-dashoffset 1.4s ease .2s;
+}
+.is-in .icon-draw path, .is-in .icon-draw rect, .is-in .icon-draw circle, .is-in .icon-draw line, .is-in .icon-draw polyline { stroke-dashoffset: 0; }
+
+/* photo tiles zoom gently on hover */
+.tile-img { transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.group:hover .tile-img { transform: scale(1.05); }
+
+/* gallery filtering */
+.g-item { transition: opacity .35s ease, transform .35s ease; }
+.g-item.is-hidden { opacity: 0; transform: scale(.96); pointer-events: none; position: absolute; visibility: hidden; }
+
+/* lightbox */
+.lb { opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+.lb.is-open { opacity: 1; pointer-events: auto; }
+.lb img { transform: scale(.97); transition: transform .3s ease; }
+.lb.is-open img { transform: none; }
+
+/* mobile menu */
+.menu { clip-path: circle(0% at calc(100% - 40px) 36px); transition: clip-path .55s cubic-bezier(.7,0,.2,1); }
+.menu.is-open { clip-path: circle(150% at calc(100% - 40px) 36px); }
+.menu a { opacity: 0; transform: translateY(12px); transition: opacity .4s ease, transform .4s ease; }
+.menu.is-open a { opacity: 1; transform: none; }
+.menu.is-open a:nth-child(2){transition-delay:.05s} .menu.is-open a:nth-child(3){transition-delay:.1s}
+.menu.is-open a:nth-child(4){transition-delay:.15s} .menu.is-open a:nth-child(5){transition-delay:.2s}
+.menu.is-open a:nth-child(6){transition-delay:.25s}
+
+/* Respect people who've asked for less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .reveal, .hero-fade, .hero-photo, .hero-line > span { opacity: 1 !important; transform: none !important; }
+  .van { transform: none !important; }
+  .animate-marquee { animation: none !important; }
+}

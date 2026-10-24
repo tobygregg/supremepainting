@@ -1,0 +1,14 @@
+{
+  "name": "supreme-painting-website",
+  "version": "1.0.0",
+  "description": "Supreme Painting & Decorating Ltd — static website (Tailwind)",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --watch"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "private": true
+}

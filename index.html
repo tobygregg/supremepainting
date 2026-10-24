@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <!-- ============================================================
+       SEO + SHARING
+       EDIT: once the domain is live, swap https://www.example.gg
+       for the real address (3 places below + the JSON-LD further down)
+       ============================================================ -->
+  <title>Supreme Painting & Decorating Ltd | Painters & Decorators in Guernsey</title>
+  <meta name="description" content="Interior and exterior painting, airless spraying, dustless sanding, drylining, plastering and pressure washing across Guernsey. Get a quote from Supreme Painting & Decorating Ltd." />
+  <meta name="theme-color" content="#171512" />
+  <link rel="canonical" href="https://www.example.gg/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Supreme Painting & Decorating Ltd" />
+  <meta property="og:title" content="Supreme Painting & Decorating Ltd — Guernsey" />
+  <meta property="og:description" content="Interior & exterior painting, airless spraying, dustless sanding, drylining, plastering and pressure washing." />
+  <meta property="og:image" content="https://www.example.gg/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://www.example.gg/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <!-- Fonts: Chakra Petch (headings) + Instrument Sans (body), self-hosted in assets/fonts -->
+  <link rel="preload" href="assets/fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Compiled Tailwind (built from src/input.css — run `npm run build` after editing classes) -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preload" as="image" href="images/gallery/kitchen-repaint.webp" />
+
+  <!-- Local business info for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HousePainter",
+    "name": "Supreme Painting & Decorating Ltd",
+    "url": "https://www.example.gg/",
+    "logo": "https://www.example.gg/images/logo-full.png",
+    "image": "https://www.example.gg/images/og-image.jpg",
+    "email": "supremedecorltd@gmail.com",
+    "areaServed": { "@type": "Place", "name": "Guernsey" },
+    "address": { "@type": "PostalAddress", "addressRegion": "Guernsey", "addressCountry": "GG" },
+    "makesOffer": [
+      "Interior painting", "Exterior painting", "Airless spraying", "Dustless sanding",
+      "Drylining", "Plastering", "Pressure washing"
+    ]
+  }
+  </script>
+</head>
+
+<body class="overflow-x-hidden">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-gold-200 focus:px-4 focus:py-2 focus:text-ink">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300">
+    <div class="wrap flex h-[72px] items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3" aria-label="Supreme Painting & Decorating — home">
+        <img src="images/logo-mark.webp" alt="" width="425" height="240" class="h-8 w-auto sm:h-9" />
+        <img src="images/logo-wordmark.webp" alt="Supreme Painting & Decorating Ltd" width="787" height="141" class="h-[18px] w-auto sm:h-5" />
+      </a>
+
+      <nav class="hidden items-center gap-8 lg:flex" aria-label="Main">
+        <a href="#services" class="text-[15px] font-medium text-white/75 transition hover:text-gold-200">Services</a>
+        <a href="#process" class="text-[15px] font-medium text-white/75 transition hover:text-gold-200">How we work</a>
+        <a href="#work" class="text-[15px] font-medium text-white/75 transition hover:text-gold-200">Our work</a>
+        <a href="#about" class="text-[15px] font-medium text-white/75 transition hover:text-gold-200">About</a>
+        <a href="#contact" class="btn-gold !min-h-[44px] !px-5">Get a quote</a>
+      </nav>
+
+      <!-- mobile menu button -->
+      <button id="menu-btn" class="relative z-[60] grid h-12 w-12 place-items-center rounded-full border border-white/15 text-white lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path class="origin-center transition duration-300" id="mb-top" d="M4 8h16" />
+          <path class="origin-center transition duration-300" id="mb-bot" d="M4 16h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- mobile menu sheet -->
+    <div id="mobile-menu" class="menu fixed inset-0 z-[55] flex flex-col bg-ink bg-hairlines px-6 pb-10 pt-28 lg:hidden" aria-hidden="true">
+      <nav class="flex flex-col gap-2" aria-label="Mobile">
+        <a href="#services" class="border-b border-white/10 py-4 font-display text-3xl font-bold text-white">Services</a>
+        <a href="#process" class="border-b border-white/10 py-4 font-display text-3xl font-bold text-white">How we work</a>
+        <a href="#work" class="border-b border-white/10 py-4 font-display text-3xl font-bold text-white">Our work</a>
+        <a href="#about" class="border-b border-white/10 py-4 font-display text-3xl font-bold text-white">About</a>
+        <a href="#contact" class="btn-gold mt-6 !min-h-[56px] text-lg">Get a quote</a>
+      </nav>
+      <p class="mt-auto text-sm text-muted-dark">supremedecorltd@gmail.com</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section id="top" class="relative isolate overflow-hidden bg-ink bg-hairlines pt-[72px] text-white">
+      <!-- soft gold glow -->
+      <div class="pointer-events-none absolute -right-40 top-10 -z-10 h-[520px] w-[520px] rounded-full bg-gold/10 blur-[120px]" aria-hidden="true"></div>
+
+      <div id="hero" class="wrap grid items-center gap-12 pb-4 pt-10 sm:pt-14 lg:grid-cols-12 lg:gap-8 lg:pb-0 lg:pt-16">
+        <!-- Text -->
+        <div class="lg:col-span-6">
+          <p class="hero-fade d1 !delay-0 mb-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-sm text-gold-100">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F1CF6B" aria-hidden="true"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+            Painters &amp; decorators in Guernsey
+          </p>
+
+          <h1 class="font-display text-[2.9rem] font-bold leading-[.98] tracking-tight sm:text-[4rem] lg:text-[4.6rem]">
+            <span class="hero-line"><span>Painting and</span></span>
+            <span class="hero-line"><span>decorating,</span></span>
+            <span class="hero-line"><span>done properly.</span></span>
+          </h1>
+
+          <!-- The paintbrush that paints the gold swoosh (animated in main.js) -->
+          <svg id="paint-svg" class="relative z-10 block w-full max-w-[560px] overflow-visible" style="margin-top:-17.7%" viewBox="0 -110 620 200" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-paint" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="#A87A1C" />
+                <stop offset=".3" stop-color="#E6BC48" />
+                <stop offset=".55" stop-color="#F6E7B4" />
+                <stop offset=".75" stop-color="#D4A72C" />
+                <stop offset="1" stop-color="#F1CF6B" />
+              </linearGradient>
+              <linearGradient id="g-ferrule" x1="0" x2="1">
+                <stop offset="0" stop-color="#8d8a84" /><stop offset=".45" stop-color="#f2f0ea" /><stop offset="1" stop-color="#77746e" />
+              </linearGradient>
+              <linearGradient id="g-handle" x1="0" x2="1">
+                <stop offset="0" stop-color="#A87A1C" /><stop offset=".5" stop-color="#F1CF6B" /><stop offset="1" stop-color="#7E5B14" />
+              </linearGradient>
+              <filter id="f-rough" x="-5%" y="-40%" width="110%" height="180%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.035 0.9" numOctaves="2" seed="4" />
+                <feDisplacementMap in="SourceGraphic" scale="6" />
+              </filter>
+            </defs>
+
+            <!-- paint stroke (shape follows the swoosh in the Supreme logo) -->
+            <g filter="url(#f-rough)" stroke-linecap="round" fill="none">
+              <path class="paint-path" d="M10 18 C 90 74, 250 86, 410 62 S 560 20, 600 6" stroke="url(#g-paint)" stroke-width="18" />
+              <path class="paint-path" d="M24 28 C 110 72, 260 80, 405 58 S 545 22, 585 12" stroke="#FFF1C2" stroke-opacity=".55" stroke-width="3" />
+              <path class="paint-path" d="M16 22 C 100 82, 255 92, 412 70 S 552 30, 594 14" stroke="#7E5B14" stroke-opacity=".6" stroke-width="2.5" />
+            </g>
+
+            <!-- sparkles like the logo -->
+            <path class="sparkle s1" fill="#F1CF6B" d="M612 -28l3.2 10.8 10.8 3.2-10.8 3.2-3.2 10.8-3.2-10.8-10.8-3.2 10.8-3.2z" />
+            <path class="sparkle s2" fill="#F6E7B4" d="M586 -48l2 6.8 6.8 2-6.8 2-2 6.8-2-6.8-6.8-2 6.8-2z" />
+            <path class="sparkle s3" fill="#E6BC48" d="M630 18l1.8 6 6 1.8-6 1.8-1.8 6-1.8-6-6-1.8 6-1.8z" />
+
+            <!-- the brush (tip sits at 0,0 and is moved along the stroke) -->
+            <g id="brush" opacity="0">
+              <g transform="rotate(32) scale(.95)">
+                <path d="M-11 -2 Q 0 6 11 -2 L 13 -30 L -13 -30 Z" fill="url(#g-paint)" />
+                <path d="M-6 -4 L -7 -28 M0 -2 L0 -28 M6 -4 L7 -28" stroke="#7E5B14" stroke-opacity=".5" stroke-width="1.2" />
+                <rect x="-14.5" y="-46" width="29" height="17" rx="2.5" fill="url(#g-ferrule)" />
+                <path d="M-14.5 -40h29M-14.5 -35h29" stroke="#5e5b55" stroke-width="1" opacity=".5" />
+                <path d="M-9 -46 C -10 -70, -6 -92, -6 -104 Q 0 -114 6 -104 C 6 -92, 10 -70, 9 -46 Z" fill="url(#g-handle)" />
+                <circle cx="0" cy="-102" r="3" fill="#171512" opacity=".55" />
+              </g>
+            </g>
+          </svg>
+
+          <p class="hero-fade d1 lede mt-2 text-muted-dark text-pretty">
+            Interior and exterior painting, airless spraying, dustless sanding, drylining, plastering and pressure washing. Careful prep, protected homes and a finish that holds up.
+          </p>
+
+          <div class="hero-fade d2 mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#contact" class="btn-gold">Get a quote</a>
+            <a href="#work" class="btn-ghost">See our work</a>
+          </div>
+
+          <ul class="hero-fade d3 mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/70">
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-gold-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Inside and out</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-gold-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Spray-finish quality</li>
+            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-gold-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tidy, dust-controlled sites</li>
+          </ul>
+        </div>
+
+        <!-- Photo collage -->
+        <div class="relative mx-auto w-full max-w-[460px] lg:col-span-6 lg:mr-0 lg:max-w-[500px]">
+          <div class="relative ml-auto w-[78%]">
+            <!-- gold offset frame -->
+            <div class="hero-photo d1 absolute -right-3 -top-3 bottom-3 left-3 rounded-[28px] border-2 border-gold/60" aria-hidden="true"></div>
+            <figure class="hero-photo d1 relative aspect-[4/5] overflow-hidden rounded-[28px] shadow-2xl">
+              <img src="images/gallery/kitchen-repaint.webp" alt="Freshly decorated kitchen with white walls and dark units" width="785" height="1700" class="h-full w-full object-cover object-[50%_35%]" fetchpriority="high" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"></div>
+            </figure>
+            <!-- gold paint drip off the frame -->
+            <svg class="pointer-events-none absolute -top-1 left-[22%] h-20 w-6" viewBox="0 0 24 80" aria-hidden="true">
+              <path class="drip" d="M4 0h16v34c0 6-3.6 10-8 10s-8-4-8-10z" fill="url(#g-paint)" />
+              <circle class="drip-drop" cx="12" cy="48" r="4.5" fill="#E6BC48" />
+            </svg>
+          </div>
+
+          <figure class="hero-photo d2 absolute -bottom-6 left-0 w-[44%] overflow-hidden rounded-2xl border-[6px] border-paint shadow-2xl" style="--r:-5deg">
+            <img src="images/gallery/exterior-scaffold.webp" alt="White house exterior being repainted from scaffolding" width="765" height="1700" class="aspect-[3/4] w-full object-cover object-[50%_40%]" />
+          </figure>
+
+          <!-- floating service chips -->
+          <div class="hero-photo d2 absolute left-[2%] top-[10%] animate-bob rounded-2xl border border-white/10 bg-ink-700/90 px-4 py-3 shadow-lift backdrop-blur">
+            <p class="flex items-center gap-2 text-sm font-semibold text-white">
+              <span class="grid h-8 w-8 place-items-center rounded-full bg-gold/15 text-gold-200">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h9v6H3zM12 11h4l2-2M7 15v5h3M18 9l3-2M18 12h3M18 9l3 0"/></svg>
+              </span>
+              Airless spraying
+            </p>
+          </div>
+          <div class="hero-photo d2 absolute -right-2 bottom-[20%] animate-bob-slow rounded-2xl border border-white/10 bg-ink-700/90 px-4 py-3 shadow-lift backdrop-blur sm:-right-6">
+            <p class="flex items-center gap-2 text-sm font-semibold text-white">
+              <span class="grid h-8 w-8 place-items-center rounded-full bg-gold/15 text-gold-200">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16h11a2 2 0 0 1 2 2v1H2v-1a2 2 0 0 1 2-2zM6 16v-4a3 3 0 0 1 3-3h4l2 2v5M15 11c3 0 6 1 6 4v4"/></svg>
+              </span>
+              Dustless sanding
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The van — drives in from the right and parks on the gold band -->
+      <div class="relative h-[150px] sm:h-[170px] lg:mt-2 lg:h-[230px]" aria-hidden="true">
+        <div id="van" class="van absolute bottom-[-10px] right-[4%] w-[250px] sm:w-[300px] lg:left-[max(2rem,calc((100vw-1200px)/2+2rem))] lg:right-auto lg:w-[320px]">
+          <!-- speed lines trail behind (to the right, because the van faces left) -->
+          <div class="absolute -right-24 top-[38%] flex w-24 flex-col gap-3">
+            <span class="speedline block h-[3px] w-full origin-left rounded-full bg-gold-200/70"></span>
+            <span class="speedline ml-6 block h-[3px] w-2/3 origin-left rounded-full bg-gold-200/50"></span>
+            <span class="speedline ml-2 block h-[3px] w-4/5 origin-left rounded-full bg-gold-200/40"></span>
+          </div>
+          <div class="absolute -right-4 bottom-2 flex gap-1">
+            <span class="dust block h-6 w-6 rounded-full bg-white/30 blur-[2px]"></span>
+            <span class="dust block h-4 w-4 rounded-full bg-white/25 blur-[2px]"></span>
+          </div>
+          <img class="van-body relative w-full drop-shadow-[0_18px_18px_rgba(0,0,0,.45)]" src="images/van.webp" alt="" width="1100" height="764" />
+        </div>
+      </div>
+
+      <!-- Gold services band (the "road") -->
+      <div class="gold-fill relative overflow-hidden border-y border-gold-700/40 py-4 text-ink">
+        <div class="flex w-max animate-marquee items-center gap-8 whitespace-nowrap font-display text-lg font-bold sm:text-xl">
+          <!-- list is duplicated so the loop is seamless -->
+          <span>Interior painting</span><span aria-hidden="true">✦</span>
+          <span>Exterior painting</span><span aria-hidden="true">✦</span>
+          <span>Airless spraying</span><span aria-hidden="true">✦</span>
+          <span>Dustless sanding</span><span aria-hidden="true">✦</span>
+          <span>Drylining</span><span aria-hidden="true">✦</span>
+          <span>Plastering</span><span aria-hidden="true">✦</span>
+          <span>Pressure washing</span><span aria-hidden="true">✦</span>
+          <span aria-hidden="true">Interior painting</span><span aria-hidden="true">✦</span>
+          <span aria-hidden="true">Exterior painting</span><span aria-hidden="true">✦</span>
+          <span aria-hidden="true">Airless spraying</span><span aria-hidden="true">✦</span>
+          <span aria-hidden="true">Dustless sanding</span><span aria-hidden="true">✦</span>
+          <span aria-hidden="true">Drylining</span><span aria-hidden="true">✦</span>
+          <span aria-hidden="true">Plastering</span><span aria-hidden="true">✦</span>
+          <span aria-hidden="true">Pressure washing</span><span aria-hidden="true">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+         ============================================================ -->
+    <section id="services" class="py-20 sm:py-24 lg:py-32">
+      <div class="wrap">
+        <div class="mb-12 grid gap-6 lg:mb-16 lg:grid-cols-12 lg:items-end">
+          <h2 class="h-section reveal text-balance lg:col-span-7">Everything from bare walls to the final coat</h2>
+          <p class="lede reveal reveal-d1 text-muted lg:col-span-5">One team for the prep, the repairs and the paint, so you're not juggling trades. Every job starts with protecting your home and ends with the place cleaner than we found it.</p>
+        </div>
+
+        <div class="grid gap-4 lg:grid-cols-12 lg:grid-rows-[300px_300px_auto]">
+          <!-- Interior & exterior painting — split photo, inside | outside -->
+          <article class="group reveal relative h-[500px] overflow-hidden rounded-[28px] bg-ink text-white lg:col-span-7 lg:row-span-2 lg:h-auto">
+            <div class="absolute inset-0 grid grid-cols-2">
+              <div class="overflow-hidden"><img src="images/gallery/utility-room.webp" alt="" width="785" height="1700" loading="lazy" class="tile-img h-full w-full object-cover object-[60%_45%]" /></div>
+              <div class="overflow-hidden"><img src="images/gallery/exterior-render-prep.webp" alt="" width="957" height="1700" loading="lazy" class="tile-img h-full w-full object-cover object-[50%_42%]" /></div>
+            </div>
+            <!-- diagonal gold seam between inside & outside -->
+            <div class="gold-fill absolute inset-y-0 left-1/2 w-[5px] -translate-x-1/2 skew-x-[-8deg]" aria-hidden="true"></div>
+            <span class="absolute left-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-semibold text-white backdrop-blur">Inside</span>
+            <span class="absolute right-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-semibold text-white backdrop-blur">Outside</span>
+            <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+              <h3 class="font-display text-[1.75rem] font-bold leading-tight sm:text-4xl">Interior &amp; exterior painting</h3>
+              <p class="mt-3 max-w-[46ch] text-white/80">Walls, ceilings, woodwork, render and masonry. Cracks filled, surfaces sanded and primed, then finished in the colour and sheen you've chosen.</p>
+              <ul class="mt-5 flex flex-wrap gap-2 text-sm">
+                <li class="rounded-full border border-white/20 px-3 py-1">Walls &amp; ceilings</li>
+                <li class="rounded-full border border-white/20 px-3 py-1">Doors &amp; woodwork</li>
+                <li class="rounded-full border border-white/20 px-3 py-1">Render &amp; masonry</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Airless spraying -->
+          <article class="group reveal reveal-d1 relative h-[340px] overflow-hidden rounded-[28px] bg-ink text-white lg:col-span-5 lg:h-auto">
+            <img src="images/gallery/airless-spray-bookcase.webp" alt="" width="785" height="1700" loading="lazy" class="tile-img absolute inset-0 h-full w-full object-cover object-[50%_58%]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <h3 class="font-display text-2xl font-bold">Airless spraying</h3>
+              <p class="mt-2 max-w-[44ch] text-white/80">A smooth finish with no brush marks on furniture, kitchen units, doors and big wall areas. Faster than rolling, too.</p>
+            </div>
+          </article>
+
+          <!-- Pressure washing -->
+          <article class="group reveal reveal-d2 relative h-[340px] overflow-hidden rounded-[28px] bg-ink text-white lg:col-span-5 lg:h-auto">
+            <img src="images/gallery/driveway-pressure-wash.webp" alt="" width="1400" height="1492" loading="lazy" class="tile-img absolute inset-0 h-full w-full object-cover object-[50%_70%]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <h3 class="font-display text-2xl font-bold">Pressure washing</h3>
+              <p class="mt-2 max-w-[44ch] text-white/80">Driveways, patios, paths and walls cleaned back, either to prep for paint or just to bring them back to life.</p>
+            </div>
+          </article>
+
+          <!-- Dustless sanding -->
+          <article class="reveal flex gap-5 rounded-[20px] bg-stone p-5 sm:flex-col sm:gap-0 sm:p-8 lg:col-span-4">
+            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-ink text-gold-200">
+              <svg class="icon-draw" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 16h11a2 2 0 0 1 2 2v1H2v-1a2 2 0 0 1 2-2z" /><path d="M6 16v-4a3 3 0 0 1 3-3h4l2 2v5" /><path d="M15 11c3 0 6 1 6 4v4" /><circle cx="21" cy="20.5" r="1" />
+              </svg>
+            </span>
+            <div><h3 class="font-display text-xl font-bold sm:mt-6">Dustless sanding</h3>
+            <p class="mt-2 text-muted">Sanders connected straight to extraction, so the dust goes in the bag instead of settling over your home.</p></div>
+          </article>
+
+          <!-- Drylining -->
+          <article class="reveal reveal-d1 flex gap-5 rounded-[20px] bg-stone p-5 sm:flex-col sm:gap-0 sm:p-8 lg:col-span-4">
+            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-ink text-gold-200">
+              <svg class="icon-draw" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="8" height="18" rx="1" /><rect x="13" y="3" width="8" height="18" rx="1" /><path d="M7 6v0M7 12v0M7 18v0M17 6v0M17 12v0M17 18v0" stroke-width="2.4" />
+              </svg>
+            </span>
+            <div><h3 class="font-display text-xl font-bold sm:mt-6">Drylining</h3>
+            <p class="mt-2 text-muted">Plasterboard walls, ceilings and partitions fixed straight and true, taped and ready to finish.</p></div>
+          </article>
+
+          <!-- Plastering -->
+          <article class="reveal reveal-d2 flex gap-5 rounded-[20px] bg-stone p-5 sm:flex-col sm:gap-0 sm:p-8 lg:col-span-4">
+            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-ink text-gold-200">
+              <svg class="icon-draw" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 15h15l3 3H6z" /><path d="M11 15v-4a2 2 0 0 1 2-2h3" /><path d="M16 9h3" /><path d="M3 21h18" />
+              </svg>
+            </span>
+            <div><h3 class="font-display text-xl font-bold sm:mt-6">Plastering</h3>
+            <p class="mt-2 text-muted">Skimming, patching and repairs that give the paint a smooth, solid base to sit on.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROCESS (paint line fills as you scroll)
+         ============================================================ -->
+    <section id="process" class="relative overflow-hidden bg-ink bg-hairlines py-20 text-white sm:py-24 lg:py-32">
+      <div class="wrap">
+        <div class="mb-14 max-w-[720px]">
+          <h2 class="h-section reveal">How a job runs</h2>
+          <p class="lede reveal reveal-d1 mt-5 text-muted-dark">Most of a good finish happens before the lid comes off the tin. Here's what to expect from the first visit to the last walk-round.</p>
+        </div>
+
+        <ol id="steps" class="relative grid gap-10 pl-16 lg:grid-cols-4 lg:gap-8 lg:pl-0 lg:pt-20">
+          <!-- track + fill (vertical on mobile, horizontal on desktop) -->
+          <span class="absolute bottom-6 left-[23px] top-6 w-[3px] rounded-full bg-ink-500 lg:hidden" aria-hidden="true"></span>
+          <span id="fill-v" class="gold-fill absolute left-[23px] top-6 w-[3px] origin-top rounded-full lg:hidden" style="bottom:24px; transform:scaleY(var(--p,0))" aria-hidden="true"></span>
+          <span class="absolute left-6 right-6 top-[23px] hidden h-[3px] rounded-full bg-ink-500 lg:block" aria-hidden="true"></span>
+          <span id="fill-h" class="gold-fill absolute left-6 right-6 top-[23px] hidden h-[3px] origin-left rounded-full lg:block" style="transform:scaleX(var(--p,0))" aria-hidden="true"></span>
+
+          <li class="step relative">
+            <span class="step-dot absolute -left-16 top-0 grid h-12 w-12 place-items-center rounded-full border-2 border-gold/50 bg-ink font-display text-lg font-bold text-gold-200 transition duration-500 lg:-top-20 lg:left-0">1</span>
+            <h3 class="font-display text-xl font-bold">Visit and quote</h3>
+            <p class="mt-2 text-muted-dark">We come out, look at the job, talk through colours and finishes, and give you a clear price.</p>
+          </li>
+          <li class="step relative">
+            <span class="step-dot absolute -left-16 top-0 grid h-12 w-12 place-items-center rounded-full border-2 border-gold/50 bg-ink font-display text-lg font-bold text-gold-200 transition duration-500 lg:-top-20 lg:left-0">2</span>
+            <h3 class="font-display text-xl font-bold">Protect and prep</h3>
+            <p class="mt-2 text-muted-dark">Floors and furniture sheeted, windows and edges masked, then filling and dust-free sanding.</p>
+          </li>
+          <li class="step relative">
+            <span class="step-dot absolute -left-16 top-0 grid h-12 w-12 place-items-center rounded-full border-2 border-gold/50 bg-ink font-display text-lg font-bold text-gold-200 transition duration-500 lg:-top-20 lg:left-0">3</span>
+            <h3 class="font-display text-xl font-bold">Paint or spray</h3>
+            <p class="mt-2 text-muted-dark">Brush, roller or airless sprayer, whichever gives the best result on that surface.</p>
+          </li>
+          <li class="step relative">
+            <span class="step-dot absolute -left-16 top-0 grid h-12 w-12 place-items-center rounded-full border-2 border-gold/50 bg-ink font-display text-lg font-bold text-gold-200 transition duration-500 lg:-top-20 lg:left-0">4</span>
+            <h3 class="font-display text-xl font-bold">Tidy and walk-round</h3>
+            <p class="mt-2 text-muted-dark">Everything cleared away, then we walk the job with you before calling it finished.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         OUR WORK — gallery with filter + lightbox
+         To add a photo: drop it in images/gallery/ and copy one
+         <li> below. data-cat must be: interior, exterior or spraying
+         ============================================================ -->
+    <section id="work" class="py-20 sm:py-24 lg:py-32">
+      <div class="wrap">
+        <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-[640px]">
+            <h2 class="h-section reveal">Recent work</h2>
+            <p class="lede reveal reveal-d1 mt-5 text-muted">A few jobs from around the island. Tap any photo to see it bigger.</p>
+          </div>
+          <div class="reveal flex flex-wrap gap-2" role="group" aria-label="Filter photos">
+            <button class="chip" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" data-filter="interior" aria-pressed="false">Interiors</button>
+            <button class="chip" data-filter="exterior" aria-pressed="false">Exteriors</button>
+            <button class="chip" data-filter="spraying" aria-pressed="false">Spraying</button>
+          </div>
+        </div>
+
+        <ul id="gallery" class="columns-1 gap-4 sm:columns-2 lg:columns-3">
+          <li class="g-item reveal mb-4 break-inside-avoid" data-cat="interior">
+            <button class="group relative block w-full overflow-hidden rounded-[20px] text-left" data-full="images/gallery/kitchen-repaint.webp" data-caption="Kitchen redecoration">
+              <img src="images/gallery/kitchen-repaint.webp" alt="Kitchen redecoration with white walls and dark units" width="785" height="1700" loading="lazy" class="tile-img aspect-[4/5] w-full object-cover object-[50%_40%]" />
+              <span class="absolute inset-x-3 bottom-3 rounded-xl bg-ink/75 px-4 py-3 text-sm font-medium text-white backdrop-blur">Kitchen redecoration</span>
+            </button>
+          </li>
+          <li class="g-item reveal reveal-d1 mb-4 break-inside-avoid" data-cat="exterior">
+            <button class="group relative block w-full overflow-hidden rounded-[20px] text-left" data-full="images/gallery/exterior-render-prep.webp" data-caption="Exterior prep: render patched and windows masked before repainting">
+              <img src="images/gallery/exterior-render-prep.webp" alt="House exterior on scaffold with render patched and windows masked" width="957" height="1700" loading="lazy" class="tile-img aspect-[3/4] w-full object-cover object-[50%_30%]" />
+              <span class="absolute inset-x-3 bottom-3 rounded-xl bg-ink/75 px-4 py-3 text-sm font-medium text-white backdrop-blur">Render patched and masked, ready for paint</span>
+            </button>
+          </li>
+          <li class="g-item reveal reveal-d2 mb-4 break-inside-avoid" data-cat="spraying">
+            <button class="group relative block w-full overflow-hidden rounded-[20px] text-left" data-full="images/gallery/airless-spray-bookcase.webp" data-caption="Bookcase sprayed with an airless sprayer">
+              <img src="images/gallery/airless-spray-bookcase.webp" alt="Bookcase freshly sprayed in a warm yellow" width="785" height="1700" loading="lazy" class="tile-img aspect-[4/5] w-full object-cover object-[50%_40%]" />
+              <span class="absolute inset-x-3 bottom-3 rounded-xl bg-ink/75 px-4 py-3 text-sm font-medium text-white backdrop-blur">Bookcase, airless sprayed</span>
+            </button>
+          </li>
+          <li class="g-item reveal mb-4 break-inside-avoid" data-cat="exterior">
+            <button class="group relative block w-full overflow-hidden rounded-[20px] text-left" data-full="images/gallery/driveway-pressure-wash.webp" data-caption="Block-paved driveway pressure washed">
+              <img src="images/gallery/driveway-pressure-wash.webp" alt="Clean block-paved driveway in front of a double garage" width="1400" height="1492" loading="lazy" class="tile-img aspect-square w-full object-cover" />
+              <span class="absolute inset-x-3 bottom-3 rounded-xl bg-ink/75 px-4 py-3 text-sm font-medium text-white backdrop-blur">Driveway pressure washed</span>
+            </button>
+          </li>
+          <li class="g-item reveal reveal-d1 mb-4 break-inside-avoid" data-cat="interior">
+            <button class="group relative block w-full overflow-hidden rounded-[20px] text-left" data-full="images/gallery/utility-room.webp" data-caption="Utility room redecoration">
+              <img src="images/gallery/utility-room.webp" alt="Utility room with fresh walls and dark cabinetry" width="785" height="1700" loading="lazy" class="tile-img aspect-[4/5] w-full object-cover object-[50%_45%]" />
+              <span class="absolute inset-x-3 bottom-3 rounded-xl bg-ink/75 px-4 py-3 text-sm font-medium text-white backdrop-blur">Utility room</span>
+            </button>
+          </li>
+          <li class="g-item reveal reveal-d2 mb-4 break-inside-avoid" data-cat="exterior">
+            <button class="group relative block w-full overflow-hidden rounded-[20px] text-left" data-full="images/gallery/exterior-scaffold.webp" data-caption="Exterior gable repaint from scaffold">
+              <img src="images/gallery/exterior-scaffold.webp" alt="White painted gable end of a house with scaffolding" width="765" height="1700" loading="lazy" class="tile-img aspect-[3/4] w-full object-cover object-[50%_35%]" />
+              <span class="absolute inset-x-3 bottom-3 rounded-xl bg-ink/75 px-4 py-3 text-sm font-medium text-white backdrop-blur">Exterior gable repaint</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT / THE VAN
+         ============================================================ -->
+    <section id="about" class="bg-stone py-20 sm:py-24 lg:py-32">
+      <div class="wrap grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        <div class="reveal relative mx-auto w-full max-w-[460px] lg:col-span-5">
+          <figure class="overflow-hidden rounded-[28px] shadow-lift" style="transform:rotate(-2deg)">
+            <img src="images/gallery/supreme-van.webp" alt="The Supreme Painting & Decorating van, a silver Ford Transit Custom with the gold logo" width="1275" height="1700" loading="lazy" class="aspect-[4/5] w-full object-cover object-[45%_55%]" />
+          </figure>
+          <div class="absolute -bottom-6 -right-2 grid h-28 w-28 place-items-center rounded-full bg-ink shadow-lift sm:-right-6 sm:h-32 sm:w-32">
+            <img src="images/logo-mark.webp" alt="" width="425" height="240" class="w-[72%]" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <h2 class="h-section reveal text-balance">You've probably seen the van</h2>
+          <p class="lede reveal reveal-d1 mt-6 text-muted">Supreme Painting &amp; Decorating Ltd is run by Paulo. Whether it's one room, a full exterior on scaffold or a single piece of furniture, every job gets the same prep and the same eye for the finish.</p>
+          <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+            <li class="reveal flex gap-3 rounded-2xl bg-paint p-5">
+              <svg class="mt-0.5 h-6 w-6 shrink-0 text-gold-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+              <span><strong class="block font-semibold">Your home protected</strong><span class="text-muted">Floors, furniture and fittings covered before anything opens.</span></span>
+            </li>
+            <li class="reveal reveal-d1 flex gap-3 rounded-2xl bg-paint p-5">
+              <svg class="mt-0.5 h-6 w-6 shrink-0 text-gold-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+              <span><strong class="block font-semibold">Prep done properly</strong><span class="text-muted">Filling, sanding and priming, because paint only hides so much.</span></span>
+            </li>
+            <li class="reveal flex gap-3 rounded-2xl bg-paint p-5">
+              <svg class="mt-0.5 h-6 w-6 shrink-0 text-gold-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 16l10-10 2 2L8 18H6z"/></svg>
+              <span><strong class="block font-semibold">Sharp, clean lines</strong><span class="text-muted">Edges cut in neatly or sprayed for a flawless, even coat.</span></span>
+            </li>
+            <li class="reveal reveal-d1 flex gap-3 rounded-2xl bg-paint p-5">
+              <svg class="mt-0.5 h-6 w-6 shrink-0 text-gold-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>
+              <span><strong class="block font-semibold">Left tidy</strong><span class="text-muted">Sheets up, rubbish gone and a walk-round with you at the end.</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT — form sends via FormSubmit to the Gmail below
+         (first ever submission sends an activation email to that
+         inbox — click the link in it once and it's live)
+         ============================================================ -->
+    <section id="contact" class="relative overflow-hidden bg-ink bg-hairlines py-20 text-white sm:py-24 lg:py-32">
+      <div class="pointer-events-none absolute -left-40 bottom-0 h-[460px] w-[460px] rounded-full bg-gold/10 blur-[120px]" aria-hidden="true"></div>
+      <div class="wrap relative grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-5">
+          <h2 class="h-section reveal text-balance">Tell us about your job</h2>
+          <p class="lede reveal reveal-d1 mt-5 text-muted-dark">A few details and a rough idea of what needs doing is plenty. Paulo will get back to you to talk it through and arrange a visit.</p>
+
+          <div class="mt-10 grid gap-3">
+            <!-- EDIT: email address -->
+            <a href="mailto:supremedecorltd@gmail.com" class="reveal group flex items-center gap-4 rounded-2xl border border-white/10 bg-ink-700 p-5 transition hover:border-gold/50">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gold/15 text-gold-200">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              </span>
+              <span class="min-w-0"><span class="block text-sm text-muted-dark">Email</span><span class="block truncate font-semibold group-hover:text-gold-200">supremedecorltd@gmail.com</span></span>
+            </a>
+            <!-- EDIT: paste Supreme's real Facebook page URL into href -->
+            <a href="https://www.facebook.com/search/top?q=Supreme%20Painting%20%26%20Decorating%20Ltd" target="_blank" rel="noopener" class="reveal reveal-d1 group flex items-center gap-4 rounded-2xl border border-white/10 bg-ink-700 p-5 transition hover:border-gold/50">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gold/15 text-gold-200">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg>
+              </span>
+              <span><span class="block text-sm text-muted-dark">Facebook</span><span class="block font-semibold group-hover:text-gold-200">See more of our work</span></span>
+            </a>
+          </div>
+
+          <div class="mt-10 hidden lg:block" aria-hidden="true">
+            <img src="images/van.webp" alt="" width="1100" height="764" loading="lazy" class="van-body w-[300px] drop-shadow-[0_18px_18px_rgba(0,0,0,.45)]" />
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <form id="quote-form" class="reveal rounded-[28px] border border-white/10 bg-ink-700/80 p-6 shadow-2xl backdrop-blur sm:p-8" action="https://formsubmit.co/supremedecorltd@gmail.com" method="POST" novalidate>
+            <!-- FormSubmit settings -->
+            <input type="hidden" name="_subject" value="New quote request from the website" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input id="f-name" name="name" class="input" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" class="input" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone <span class="text-white/40">(optional)</span></label>
+                <input id="f-phone" name="phone" type="tel" class="input" autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="f-service">What do you need?</label>
+                <select id="f-service" name="service" class="input appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23F1CF6B%22 stroke-width=%222%22><path d=%22M6 9l6 6 6-6%22/></svg>')] bg-[length:16px] bg-[right_16px_center] bg-no-repeat pr-10">
+                  <option>Interior painting</option>
+                  <option>Exterior painting</option>
+                  <option>Airless spraying</option>
+                  <option>Dustless sanding</option>
+                  <option>Drylining</option>
+                  <option>Plastering</option>
+                  <option>Pressure washing</option>
+                  <option>A mix / not sure yet</option>
+                </select>
+              </div>
+              <div class="field sm:col-span-2">
+                <label for="f-area">Parish or area</label>
+                <input id="f-area" name="area" class="input" placeholder="e.g. St Peter Port" />
+              </div>
+              <div class="field sm:col-span-2">
+                <label for="f-msg">Tell us about the job</label>
+                <textarea id="f-msg" name="message" rows="5" class="input resize-y" placeholder="Rooms or areas, rough sizes, any timings…" required></textarea>
+              </div>
+            </div>
+
+            <p id="form-status" class="mt-5 hidden rounded-xl px-4 py-3 text-sm" role="status" aria-live="polite"></p>
+
+            <button type="submit" class="btn-gold mt-6 w-full sm:w-auto">
+              <span class="btn-label">Send quote request</span>
+            </button>
+            <p class="mt-4 text-xs text-white/40">Your details only go to Supreme Painting &amp; Decorating and are used to reply to you.</p>
+          </form>
+
+          <!-- shown after a successful send -->
+          <div id="form-done" class="hidden rounded-[28px] border border-gold/40 bg-ink-700 p-8 text-center sm:p-12" tabindex="-1">
+            <svg class="mx-auto h-16 w-16" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <circle cx="32" cy="32" r="30" stroke="#D4A72C" stroke-width="3" />
+              <path d="M19 33l9 9 17-19" stroke="#F1CF6B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <h3 class="mt-6 font-display text-2xl font-bold">Quote request sent</h3>
+            <p class="mx-auto mt-3 max-w-[40ch] text-muted-dark">Thanks — Paulo will be in touch soon. If it's urgent, email supremedecorltd@gmail.com.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="border-t border-white/10 bg-ink py-12 text-white">
+    <div class="wrap grid gap-10 sm:grid-cols-2 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <img src="images/logo-full.webp" alt="Supreme Painting & Decorating Ltd" width="787" height="445" loading="lazy" class="w-[200px]" />
+        <p class="mt-4 max-w-[36ch] text-sm text-muted-dark">Painting, decorating and property finishing across Guernsey.</p>
+      </div>
+      <nav class="lg:col-span-3" aria-label="Footer">
+        <h2 class="font-display text-sm font-semibold text-gold-200">Explore</h2>
+        <ul class="mt-4 grid gap-2 text-sm text-white/70">
+          <li><a class="hover:text-gold-200" href="#services">Services</a></li>
+          <li><a class="hover:text-gold-200" href="#process">How we work</a></li>
+          <li><a class="hover:text-gold-200" href="#work">Our work</a></li>
+          <li><a class="hover:text-gold-200" href="#contact">Get a quote</a></li>
+        </ul>
+      </nav>
+      <div class="lg:col-span-4">
+        <h2 class="font-display text-sm font-semibold text-gold-200">Get in touch</h2>
+        <ul class="mt-4 grid gap-2 text-sm text-white/70">
+          <li><a class="hover:text-gold-200" href="mailto:supremedecorltd@gmail.com">supremedecorltd@gmail.com</a></li>
+          <li>Guernsey, Channel Islands</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap mt-10"><div class="flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row sm:justify-between">
+      <p>© <span id="year">2026</span> Supreme Painting &amp; Decorating Ltd</p>
+      <a href="#top" class="hover:text-gold-200">Back to top</a>
+    </div></div>
+  </footer>
+
+  <!-- ============================================================
+       LIGHTBOX (filled in by main.js)
+       ============================================================ -->
+  <div id="lightbox" class="lb fixed inset-0 z-[70] flex flex-col items-center justify-center bg-ink/95 p-4 backdrop-blur" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+    <button id="lb-close" class="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full border border-white/20 text-white hover:border-gold-200 hover:text-gold-200" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <img id="lb-img" src="" alt="" class="max-h-[78vh] max-w-full rounded-2xl object-contain shadow-2xl" />
+    <p id="lb-cap" class="mt-4 max-w-[60ch] text-center text-white/80"></p>
+    <div class="mt-4 flex gap-3">
+      <button id="lb-prev" class="grid h-12 w-12 place-items-center rounded-full border border-white/20 text-white hover:border-gold-200 hover:text-gold-200" aria-label="Previous photo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button id="lb-next" class="grid h-12 w-12 place-items-center rounded-full border border-white/20 text-white hover:border-gold-200 hover:text-gold-200" aria-label="Next photo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
